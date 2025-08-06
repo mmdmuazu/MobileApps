@@ -6,8 +6,6 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
-    <access origin="*" />
-    <allow-navigation href="http://127.0.0.1:5000/*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
+    <!-- <allow-intent href="http://*/*" /> -->
+    <!-- <allow-intent href="https://*/*" /> -->
 </widget>

@@ -27,16 +27,12 @@
       justify-content: space-between;
     }
 
-    form input, form button {
+     form input, form button {
       flex: 1 1 200px;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
-    }
-    form input{
-        background-color: whitesmoke;
-        color: black;
-    }
+    } 
 
     form button {
       background: #2563eb;
@@ -86,6 +82,10 @@
       width: 100%;
       border-collapse: collapse;
       min-width: 700px;
+      color: black;
+    }
+    table::-webkit-scrollbar{
+    display: none;
     }
 
     th, td {
@@ -99,12 +99,62 @@
       color: white;
     }
 
-    /* @media (max-width: 600px) {
-      form {
-        flex-direction: column;
+    @media (max-width: 600px) {
+      .paid{
+        /* float: inline-start; */
+        /* display: flex; */
+        margin-left: -29%;
+        margin-top: -12%;
+        /* width: 20px; */
       }
-
+      label{
+        /* display: flex; */
+        /* margin: 25%; */
+        margin-bottom: -2%;
+        /* margin: -10%; */
+        /* margin-right: -0%; */
+      }
       form input, form button {
         flex: 1 1 100%;
-      } */
-    /* } */
+      }
+    }
+    .paid{
+    border-radius: 50%;
+    display: flex;
+    /* width: 20px; */
+    /* height: 20px; */
+    margin-left: -17%;
+    cursor: pointer;
+    }
+    label{
+      margin-top: 3px;padding: 5px; font-size: 20px;
+    }
+
+          #loader {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+      .spinner {
+        background-color: transparent;
+        height: 50px;
+        width: 50px;
+        border-top: 2px solid #34495e;
+        border-bottom: 2px solid #e67e22;
+        border-right: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to{
+            transform :rotate(360deg)
+        }
+      }

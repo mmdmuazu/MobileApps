@@ -8,10 +8,13 @@
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/index.css">
-        <title>Palm Ledger</title>
+        <title>palm ledger</title>
     </head>
     <body>
- <div class="container">
+        <div id="loader">
+      <div class="spinner"></div>
+    </div>
+        <div class="container">
     <h1>Palm Ledger App</h1>
 
     <!-- Search Form -->
@@ -21,11 +24,14 @@
     </form>
 
     <!-- Entry Form -->
-    <form  id="form" >
+    <form action="/" method="POST">
       <input type="text" name="customer_name" placeholder="Customer Name" required>
       <input type="text" name="product_name" placeholder="Product Name" required>
       <input type="number" name="quantity" placeholder="Quantity" required>
-      <input type="number" name="price" placeholder="Price (per unit)" step="0.01" required>
+      <input type="text" id="price" name="price" placeholder="Price (per unit)" required oninput="formatPrice(this)">
+      <label>Paid</label>
+      <input class="paid" type="checkbox" name="paid">
+      <!-- <input type="date" name="date" required> -->
       <button type="submit">Add Transaction</button>
     </form>
 
@@ -39,17 +45,21 @@
             <th>Qty</th>
             <th>Price</th>
             <th>Total</th>
+            <th>Paid</th>
             <th>Date</th>
           </tr>
         </thead>
         <tbody>
-          {% for t in transactions %}
+          {% for t in ledger %}
           <tr>
             <td>{{ t.customer_name }}</td>
             <td>{{ t.product_name }}</td>
             <td>{{ t.quantity }}</td>
-            <td>₦{{ '%.2f'|format(t.price) }}</td>
-            <td>₦{{ '%.2f'|format(t.total) }}</td>
+            <td>₦{{ "{:,.2f}".format(t.price) }}</td>
+            <td>₦{{ "{:,.2f}".format(t.total) }}</td>
+            <td style="text-align: center;"> 
+              <div class="paid-dot" style="background-color: {{ t.color }}; border-radius: 50%; width: 20px; height: 20px; margin-left: 15px; cursor: pointer;"></div>
+            </td>
             <td>{{ t.date }}</td>
           </tr>
           {% else %}
@@ -61,7 +71,7 @@
       </table>
     </div>
   </div>
-        <!-- <script src="cordova.js"></script> -->
+        <script src="cordova.js"></script>
         <script src="js/index.js"></script>
     </body>
 </html>
