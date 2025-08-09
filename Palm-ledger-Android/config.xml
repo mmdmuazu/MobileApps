@@ -1,11 +1,43 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.palmledger.mmdmuazu" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Palmledger</name>
+    <name>Palm ledger</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
         Apache Cordova Team
     </author>
-    <content src="index.html" />
-    <!-- <allow-intent href="http://*/*" /> -->
-    <!-- <allow-intent href="https://*/*" /> -->
+    <content width="100%" src="index.html" />
+    <!-- <icon src="logo.png" /> -->
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <platform name="android">
+        <!--
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        -->
+        <!-- <icon src="res/android/ldpi.png" density="ldpi" /> -->
+        <icon src="res/icon/android/mdpi.png" density="mdpi" />
+        <icon src="res/icon/android/hdpi.png" density="hdpi" />
+        <icon src="res/icon/android/xhdpi.png" density="xhdpi" />
+        <icon src="res/icon/android/xxhdpi.png" density="xxhdpi" />
+        <icon src="res/icon/android/xxxhdpi.png" density="xxxhdpi" />
+
+        <!-- <preference name="SplashScreenDelay" value="0" />
+        <preference name="AutoHideSplashScreen" value="false" /> -->
+
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/appstore.png" />
+        <preference name="AndroidWindowSplashScreenFullScreen" value="true" />
+        <preference name="AndroidWindowSplashScreenBackground" value="#000000" />
+        <preference name="AndroidWindowSplashScreenIconBackgroundColor" value="#000000" />
+        <preference name="AndroidWindowSplashScreenFadeOutDuration" value="300" />
+        
+
+
+    </platform>
+
+
+
 </widget>

@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>palm ledger</title>
-    </head>
-    <body>
-        <div id="loader">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>palm ledger</title>
+  </head>
+  <body>
+    <div id="loader">
       <div class="spinner"></div>
     </div>
-        <div class="container">
-    <h1>Palm Ledger App</h1>
+    <div class="container">
+      <h1>Palm Ledger App</h1>
 
-    <!-- Search Form -->
-    <form method="GET" action="/" class="search-form">
-      <input type="text" name="search" placeholder="Search by name or product" class="search-input" />
-      <button type="submit" class="search-btn">Search</button>
-    </form>
+      <!-- Search Form -->
+      <form method="GET" action="/" class="search-form">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search by name or product"
+          class="search-input" />
+        <button type="submit" class="search-btn">Search</button>
+      </form>
 
-    <!-- Entry Form -->
-    <form action="/" method="POST">
-      <input type="text" name="customer_name" placeholder="Customer Name" required>
-      <input type="text" name="product_name" placeholder="Product Name" required>
-      <input type="number" name="quantity" placeholder="Quantity" required>
-      <input type="text" id="price" name="price" placeholder="Price (per unit)" required oninput="formatPrice(this)">
-      <label>Paid</label>
-      <input class="paid" type="checkbox" name="paid">
-      <!-- <input type="date" name="date" required> -->
-      <button type="submit">Add Transaction</button>
-    </form>
+      <!-- Entry Form -->
+      <form id="form">
+        <input
+          type="text"
+          name="customer_name"
+          placeholder="Customer Name"
+          required />
+        <input
+          type="text"
+          name="product_name"
+          placeholder="Product Name"
+          required />
+        <input type="number" name="quantity" placeholder="Quantity" required />
+        <input
+          type="text"
+          id="price"
+          name="price"
+          placeholder="Price (per unit)"
+          required
+          oninput="formatPrice(this)" />
+        <label>Paid</label>
+        <input class="paid" type="checkbox" name="paid" />
+        <!-- <input type="date" name="date" required> -->
+        <button type="submit">Add Transaction</button>
+      </form>
 
-    <!-- Ledger Table -->
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Customer</th>
-            <th>Product</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th>Total</th>
-            <th>Paid</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for t in ledger %}
+      <!-- Ledger Table -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Price</th>
+              <th>Total</th>
+              <th>Paid</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- {% for t in ledger %}
           <tr>
             <td>{{ t.customer_name }}</td>
             <td>{{ t.product_name }}</td>
@@ -66,12 +88,12 @@
           <tr>
             <td colspan="6">No transactions found.</td>
           </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+          {% endfor %} -->
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
